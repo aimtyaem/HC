@@ -1,0 +1,14 @@
+import koinos.Koinos;
+
+public class HealthcareApp {
+    public static void main(String[] args) {
+        // Create a new instance of the Koinos application
+        Koinos koinos = new Koinos();
+
+        // Use Koinos to integrate digital ownership into the application
+        koinos.integrateDigitalOwnership();
+
+        // Use Koinos to deliver powerful new social experiences
+        koinos.deliverSocialExperiences();
+    }
+}
