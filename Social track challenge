@@ -12,3 +12,21 @@ public class HealthcareApp {
         koinos.deliverSocialExperiences();
     }
 }
+public class Main {
+    public static void main(String[] args) {
+        // Entry and Contracting
+        System.out.println("This first phase deals with the initial contact with the client about the project[^1^][1].");
+
+        // Data Collection and Diagnosis
+        System.out.println("It's important that consultants come up with their own sense of the problem[^1^][1].");
+
+        // Feedback and the Decision to Act
+        System.out.println("As a consultant, you'll need to report your findings from phase 2[^1^][1].");
+
+        // Implementation
+        System.out.println("Implement the solution[^1^][1].");
+
+        // Extension, Recycle, or Termination
+        System.out.println("Decide on the next steps[^1^][1].");
+    }
+}
