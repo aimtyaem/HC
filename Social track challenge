@@ -1,32 +1,32 @@
-import koinos.Koinos;
+import java.util.Scanner;
 
-public class HealthcareApp {
+public class InterviewFeedback {
+
     public static void main(String[] args) {
-        // Create a new instance of the Koinos application
-        Koinos koinos = new Koinos();
+        // Create a new Scanner object to read input from the console.
+        Scanner scanner = new Scanner(System.in);
 
-        // Use Koinos to integrate digital ownership into the application
-        koinos.integrateDigitalOwnership();
+        // Print a welcome message to the user.
+        System.out.println("Welcome to the interview feedback form.");
 
-        // Use Koinos to deliver powerful new social experiences
-        koinos.deliverSocialExperiences();
-    }
-}
-public class Main {
-    public static void main(String[] args) {
-        // Entry and Contracting
-        System.out.println("This first phase deals with the initial contact with the client about the project[^1^][1].");
+        // Ask the user to rate their overall experience on a scale of 1 to 5, where 1 is "very bad" and 5 is "very good".
+        System.out.println("How would you rate your overall experience with the interview?" +
+                "\n1. Very bad" +
+                "\n2. Bad" +
+                "\n3. Neutral" +
+                "\n4. Good" +
+                "\n5. Very good");
 
-        // Data Collection and Diagnosis
-        System.out.println("It's important that consultants come up with their own sense of the problem[^1^][1].");
+        // Read the user's response.
+        int rating = scanner.nextInt();
 
-        // Feedback and the Decision to Act
-        System.out.println("As a consultant, you'll need to report your findings from phase 2[^1^][1].");
+        // Ask the user to provide a comment about their experience.
+        System.out.println("Please provide a comment about your experience.");
 
-        // Implementation
-        System.out.println("Implement the solution[^1^][1].");
+        // Read the user's comment.
+        String comment = scanner.nextLine();
 
-        // Extension, Recycle, or Termination
-        System.out.println("Decide on the next steps[^1^][1].");
+        // Print a thank you message to the user.
+        System.out.println("Thank you for your feedback.");
     }
 }
