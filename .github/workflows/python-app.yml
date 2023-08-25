@@ -1,39 +1,61 @@
-# This workflow will install Python dependencies, run tests and lint with a single version of Python
-# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
-
-name: Python application
-
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
-
-permissions:
-  contents: read
-
-jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v3
-    - name: Set up Python 3.10
-      uses: actions/setup-python@v3
-      with:
-        python-version: "3.10"
-    - name: Install dependencies
+    - name: Run AIMarketplace
       run: |
-        python -m pip install --upgrade pip
-        pip install flake8 pytest
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Lint with flake8
-      run: |
-        # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
-      run: |
-        pytest
+        python -c "
+        from blockchain import Blockchain
+
+        class AIMarketplace:
+            def __init__(self):
+                self.blockchain = Blockchain()
+                self.clients = []
+                self.data = []
+                self.algorithms = []
+
+            def entry_and_contracting(self, client):
+                # Add the client to the list of clients
+                self.clients.append(client)
+                # Create a contract between the marketplace and the client
+                contract = {
+                    'client': client,
+                    'data': [],
+                    'algorithms': []
+                }
+                # Add the contract to the blockchain
+                self.blockchain.add_block(contract)
+
+            def data_collection_and_diagnosis(self, client, data):
+                # Collect data from the client
+                self.data.append(data)
+                # Add the data to the client's contract
+                for block in self.blockchain.chain:
+                    if block.data['client'] == client:
+                        block.data['data'].append(data)
+
+            def feedback_and_decision_to_act(self, client, algorithm):
+                # Provide feedback to the client about the algorithm
+                feedback = {
+                    'client': client,
+                    'algorithm': algorithm,
+                    'feedback': 'The algorithm is suitable for your data'
+                }
+                # Add the feedback to the blockchain
+                self.blockchain.add_block(feedback)
+
+            def implementation(self, client, algorithm):
+                # Implement the algorithm for the client
+                implementation = {
+                    'client': client,
+                    'algorithm': algorithm,
+                    'implementation': 'The algorithm has been successfully implemented'
+                }
+                # Add the implementation to the blockchain
+                self.blockchain.add_block(implementation)
+
+            def extension_recycle_or_termination(self, client):
+                # Decide on the next steps for the client
+                decision = {
+                    'client': client,
+                    'decision': 'The contract has been extended for another year'
+                }
+                # Add the decision to the blockchain
+                self.blockchain.add_block(decision)
+        "
