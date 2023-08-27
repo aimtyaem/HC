@@ -1,4 +1,4 @@
-![Image](https://user-images.githubusercontent.com/64774266/262174146-8dd20dd3-1d45-4fd5-81cf-908962b7f952.jpg)
+![Image](https://github.com/aimtyaem/HC/blob/main/White%20&%20Green%20Mobile%20Mockup%20Photo%20Collage%20Beauty%20Pinterest%20Pin.jpg)
 AIMarketplace` class in the Python code example provided earlier:
 
 1. **Initialize the marketplace**: First, you need to create an instance of the `AIMarketplace` class. This will initialize the blockchain and create empty lists for clients, data, and algorithms.
